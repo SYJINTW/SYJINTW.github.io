@@ -30,14 +30,12 @@
   </url><url>
     <loc>/categories/</loc>
   </url><url>
-    <loc>/authors/example-author/</loc>
-  </url><url>
-    <loc>/authors/hugo-authors/</loc>
-  </url><url>
     <loc>/posts/</loc>
   </url><url>
     <loc>/series/</loc>
   </url><url>
     <loc>/tags/</loc>
+  </url><url>
+    <loc>/authors/my-author/</loc>
   </url>
 </urlset>
