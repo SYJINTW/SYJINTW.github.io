@@ -6,8 +6,19 @@
     <description>Recent content in tutorial on SYJINTW</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 01 Mar 2025 05:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 22 Mar 2025 02:29:41 +0800</lastBuildDate>
     <atom:link href="/tags/tutorial/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cuda and PyTorch Setup Guide</title>
+      <link>/posts/cuda-and-pytorch/</link>
+      <pubDate>Sat, 22 Mar 2025 02:29:41 +0800</pubDate>
+      <guid>/posts/cuda-and-pytorch/</guid>
+      <description>This guide walks you through checking, switching, and verifying your CUDA version, and setting up the correct PyTorch installation for it.
+Check Current CUDA Version To check which CUDA version is currently active:
+nvcc -V 🖥️ Example Output:
+nvcc: NVIDIA (R) Cuda compiler driver Copyright (c) 2005-2021 NVIDIA Corporation Built on Thu_Nov_18_09:45:30_PST_2021 Cuda compilation tools, release 11.5, V11.5.119 Build cuda_11.5.r11.5/compiler.30672275_0 ✅ This means the currently active CUDA version is 11.5.
+Check Installed CUDA Versions Run the following command to list all installed CUDA directories:</description>
+    </item>
     <item>
       <title>How to be a Server Administrator</title>
       <link>/posts/server-admin/</link>
