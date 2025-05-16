@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<title>Cuda and PyTorch Setup Guide | SYJINTW</title>
+<title>How to use SVN (Subversion) with command line | SYJINTW</title>
 
 <meta name="generator" content="Hugo Eureka 0.9.3" />
 <link rel="stylesheet" href="/css/eureka.min.9cec6350e37e534b0338fa9a085bf06855de3b0f2dcf857e792e5e97b07ea905d4d5513db554cbc26a9c3da622bae92d.css">
@@ -75,7 +75,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/images/icon_huc013e8036fac4cc334bba2d942743a3c_177300_180x180_fill_box_center_3.png">
 
 <meta name="description"
-  content="This guide walks you through checking, switching, and verifying your CUDA version, and setting up the correct PyTorch installation for it.">
+  content="A concise SVN tutorial for Git users. This guide compares essential Git commands with their SVN equivalents and walks you through practical SVN workflows, including listing, checkout, export, add, and commit operations. Perfect for developers transitioning between version control systems.">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -87,8 +87,8 @@
       "item":"/posts/"},{
       "@type": "ListItem",
       "position": 2 ,
-      "name":"Cuda and PyTorch Setup Guide",
-      "item":"/posts/cuda-and-pytorch/"}]
+      "name":"How to use SVN (Subversion) with command line",
+      "item":"/posts/svn-usage/"}]
 }
 </script>
 
@@ -100,11 +100,11 @@
     "@type": "Article",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "/posts/cuda-and-pytorch/"
+        "@id": "/posts/svn-usage/"
     },
-    "headline": "Cuda and PyTorch Setup Guide | SYJINTW","datePublished": "2025-03-22T02:29:41+08:00",
-    "dateModified": "2025-03-22T02:29:41+08:00",
-    "wordCount":  299 ,
+    "headline": "How to use SVN (Subversion) with command line | SYJINTW","datePublished": "2025-03-02T13:11:22+08:00",
+    "dateModified": "2025-03-02T13:11:22+08:00",
+    "wordCount":  541 ,
     "publisher": {
         "@type": "Person",
         "name": "Yuan-Chun Sun",
@@ -113,20 +113,20 @@
             "url": "/images/icon.png"
         }
         },
-    "description": "This guide walks you through checking, switching, and verifying your CUDA version, and setting up the correct PyTorch installation for it."
+    "description": "A concise SVN tutorial for Git users. This guide compares essential Git commands with their SVN equivalents and walks you through practical SVN workflows, including listing, checkout, export, add, and commit operations. Perfect for developers transitioning between version control systems."
 }
-</script><meta property="og:title" content="Cuda and PyTorch Setup Guide | SYJINTW" />
+</script><meta property="og:title" content="How to use SVN (Subversion) with command line | SYJINTW" />
 <meta property="og:type" content="article" />
 
 
 <meta property="og:image" content="/images/icon.png">
 
 
-<meta property="og:url" content="/posts/cuda-and-pytorch/" />
+<meta property="og:url" content="/posts/svn-usage/" />
 
 
 
-<meta property="og:description" content="This guide walks you through checking, switching, and verifying your CUDA version, and setting up the correct PyTorch installation for it." />
+<meta property="og:description" content="A concise SVN tutorial for Git users. This guide compares essential Git commands with their SVN equivalents and walks you through practical SVN workflows, including listing, checkout, export, add, and commit operations. Perfect for developers transitioning between version control systems." />
 
 
 
@@ -142,10 +142,10 @@
 
 
 
-<meta property="article:published_time" content="2025-03-22T02:29:41&#43;08:00" />
+<meta property="article:published_time" content="2025-03-02T13:11:22&#43;08:00" />
 
 
-<meta property="article:modified_time" content="2025-03-22T02:29:41&#43;08:00" />
+<meta property="article:modified_time" content="2025-03-02T13:11:22&#43;08:00" />
 
 
 
@@ -154,8 +154,6 @@
 
 <meta property="article:tag" content="AIINS" />
 
-<meta property="article:tag" content="ubuntu" />
-
 <meta property="article:tag" content="tutorial" />
 
 
@@ -163,8 +161,6 @@
 
 
 <meta property="og:see_also" content="/posts/server-admin/" />
-
-<meta property="og:see_also" content="/posts/svn-usage/" />
 
 
 
@@ -248,7 +244,7 @@
       class=" bg-secondary-bg col-span-2 rounded px-6 py-8 lg:col-span-6"
     >
       <article class="prose">
-  <h1 class="mb-4">Cuda and PyTorch Setup Guide</h1>
+  <h1 class="mb-4">How to use SVN (Subversion) with command line</h1>
 
   <div
   class="text-tertiary-text not-prose mt-2 flex flex-row flex-wrap items-center"
@@ -256,12 +252,12 @@
   <div class="me-6 my-2">
     <i class="fas fa-calendar me-1"></i>
     <span
-      >2025-03-22</span
+      >2025-03-02</span
     >
   </div>
   <div class="me-6 my-2">
     <i class="fas fa-clock me-1"></i>
-    <span>2 min read</span>
+    <span>3 min read</span>
   </div>
 
   
@@ -273,76 +269,160 @@
   
   
 
-  <p>This guide walks you through checking, switching, and verifying your CUDA version, and setting up the correct PyTorch installation for it.</p>
+  <p>In this document, I will introduce the most useful SVN commands based on my personal experience. If there are any important commands I missed, feel free to contact me — your suggestions might benefit all readers.</p>
 <hr>
-<h2 id="check-current-cuda-version">Check Current CUDA Version</h2>
-<p>To check which CUDA version is currently active:</p>
-<pre><code class="language-bash">nvcc -V
-</code></pre>
-<p>🖥️ Example Output:</p>
-<pre><code class="language-bash">nvcc: NVIDIA (R) Cuda compiler driver
-Copyright (c) 2005-2021 NVIDIA Corporation
-Built on Thu_Nov_18_09:45:30_PST_2021
-Cuda compilation tools, release 11.5, V11.5.119
-Build cuda_11.5.r11.5/compiler.30672275_0
-</code></pre>
-<p>✅ This means the currently active CUDA version is 11.5.</p>
-<hr>
-<h2 id="check-installed-cuda-versions">Check Installed CUDA Versions</h2>
-<p>Run the following command to list all installed CUDA directories:</p>
-<pre><code class="language-bash">cat /usr/local/cuda-*
-</code></pre>
-<p>🖥️ Example Output:</p>
-<pre><code class="language-bash">cat: /usr/local/cuda-11.7: Is a directory
-cat: /usr/local/cuda-12: Is a directory
-cat: /usr/local/cuda-12.4: Is a directory
-cat: /usr/local/cuda-12.8: Is a directory
-</code></pre>
-<p>✅ This indicates that the system has the following CUDA versions installed:</p>
+<h2 id="what-is-svn">What is SVN?</h2>
+<p><strong><a href="https://subversion.apache.org/">SVN (Apache Subversion)</a></strong> is a centralized version control system that allows multiple users to collaborate on code or documents by keeping track of changes in a central repository. Unlike <a href="https://git-scm.com/">Git</a>, which is distributed, SVN relies on a single central server to store all versions of files, and developers check out and commit changes directly to this server.</p>
+<p>⭐️ Key Features:</p>
 <ul>
-<li>CUDA 11.7</li>
-<li>CUDA 12.0</li>
-<li>CUDA 12.4</li>
-<li>CUDA 12.8</li>
+<li>Centralized version control (all history is stored on the server)</li>
+<li>Supports branching and tagging</li>
+<li>Efficient for managing binary files and large codebases</li>
+<li>Simple and mature with strong enterprise adoption</li>
 </ul>
 <hr>
-<h2 id="change-cuda-version-in-conda-environment">Change CUDA Version (in Conda Environment)</h2>
-<p>If you want to switch to <strong>CUDA 11.7</strong> in a specific Conda environment, run:</p>
-<pre><code class="language-bash">conda env config vars set CUDA_HOME=/usr/local/cuda-11.7
-conda env config vars set PATH=/usr/local/cuda-11.7/bin:$PATH
-conda env config vars set LD_LIBRARY_PATH=/usr/local/cuda-11.7/lib64:$LD_LIBRARY_PATH
+<h2 id="tools-for-svn">Tools for SVN</h2>
+<p>For Windows&rsquo; users, you can try <a href="https://tortoisesvn.net/">TortoiseSVN</a>.<br>
+For AIINS&rsquo;s students, you can use browser to access SVN server (for downloading).</p>
+<hr>
+<h2 id="git-workflow-for-comparison">Git Workflow (for comparison)</h2>
+<p>SVN (Subversion) shares some conceptual similarities with Git. This tutorial assumes that readers are already familiar with Git, GitHub, and GitLab. When you want to download a repository from GitHub, the common workflow looks like this:</p>
+<ol>
+<li>
+<p><strong>Clone</strong> the repository to your local machine:</p>
+<pre><code class="language-bash">git clone {url}
 </code></pre>
-<p>Then, reactivate your Conda environment:</p>
-<pre><code class="language-bash">conda deactivate
-conda activate &lt;env_name&gt;
+</li>
+<li>
+<p>Modify the code.</p>
+</li>
+<li>
+<p><strong>Add</strong> the modified files:</p>
+<pre><code class="language-bash">git add {modified-files}
 </code></pre>
-<h3 id="verify-the-change">Verify the Change</h3>
-<p>Run the following command again:</p>
-<pre><code class="language-bash">nvcc -V
+</li>
+<li>
+<p><strong>Commit</strong> the changes:</p>
+<pre><code class="language-bash">git commit -m &quot;comments&quot;
 </code></pre>
-<p>🖥️ You should see something like:</p>
-<pre><code class="language-bash">nvcc: NVIDIA (R) Cuda compiler driver
-Copyright (c) 2005-2022 NVIDIA Corporation
-Built on Tue_May__3_18:49:52_PDT_2022
-Cuda compilation tools, release 11.7, V11.7.64
-Build cuda_11.7.r11.7/compiler.31294372_0
+</li>
+<li>
+<p><strong>Push</strong> the changes to GitHub:</p>
+<pre><code class="language-bash">git push
+</code></pre>
+</li>
+</ol>
+<p>In summary, there are four key Git commands: <code>clone</code>, <code>add</code>, <code>commit</code>, and <code>push</code>.<br>
+Below is a comparison to equivalent SVN commands:</p>
+<table>
+<thead>
+<tr>
+<th>Git Command</th>
+<th>SVN Equivalent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>clone</td>
+<td>checkout</td>
+</tr>
+<tr>
+<td>add</td>
+<td>add (with differences)</td>
+</tr>
+<tr>
+<td>commit + push</td>
+<td>commit</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="svn-commands">SVN Commands</h2>
+<h3 id="list-repository-contents">List Repository Contents</h3>
+<p>Before downloading anything, verify the contents of the repository:</p>
+<pre><code class="language-bash">svn list {url}
+</code></pre>
+<h3 id="download">Download</h3>
+<p>There are two main ways to download an SVN repository:</p>
+<ol>
+<li><strong>Checkout:</strong> This will create a working copy of the repositorys</li>
+</ol>
+<pre><code class="language-bash">svn checkout {url}
+</code></pre>
+<p><em>Tip: If the repo is large and you only want the top-level directory (without files), use <code>--depth empty</code>:</em></p>
+<pre><code class="language-bash">svn checkout {url} --depth empty
+</code></pre>
+<ol start="2">
+<li><strong>Export:</strong> Use this if you want to download files without the <code>.svn</code> metadata:</li>
+</ol>
+<pre><code class="language-bash">svn export {url}
+</code></pre>
+<h3 id="add-new-files-or-folders">Add New Files or Folders</h3>
+<p>If you create new files or folders locally, you need to <code>add</code> them explicitly (unlike Git, which detects them automatically).</p>
+<p>To add a folder named <code>example</code>:</p>
+<pre><code class="language-bash">svn add example
+</code></pre>
+<p>To add multiple files:</p>
+<pre><code class="language-bash">svn add test1.txt test2.txt
+</code></pre>
+<h3 id="commit-changes">Commit Changes</h3>
+<p>Unlike Git, SVN <code>commit</code> both saves and uploads the changes to the server:</p>
+<pre><code class="language-bash">svn commit -m &quot;message&quot;
 </code></pre>
 <hr>
-<h2 id="check-cuda-version-in-pytorch">Check CUDA Version in PyTorch</h2>
-<p>To check which CUDA version your PyTorch is using:</p>
-<pre><code class="language-bash">python -c &quot;import torch; print(torch.version.cuda)&quot;
+<h2 id="try-it-yourself-for-aiins-student">Try It Yourself (For AIINS student)</h2>
+<p>Follow these steps to test SVN usage:</p>
+<h3 id="1-list-the-repository">1. List the repository</h3>
+<pre><code class="language-bash">svn ls {url}
 </code></pre>
 <p>🖥️ Example Output:</p>
-<pre><code class="language-bash">11.7
+<pre><code class="language-bash">IRB/
+digitaltwins/
+drone/
+event/
+immersive/
+presentation/
+proposal/
+sensing/
+svn_example/
+thesis/
+</code></pre>
+<h3 id="2-checkout-the-svn_example-directory">2. Checkout the <code>svn_example</code> directory</h3>
+<pre><code class="language-bash">svn checkout https://nmsl.cs.nthu.edu.tw/svn/nmsl/svn_example
+</code></pre>
+<p>🖥️ Example Output:</p>
+<pre><code class="language-bash">A    svn_example/test1_depth1.txt
+A    svn_example/test2_depth1.txt
+Checked out revision 219.
+</code></pre>
+<h3 id="3-create-a-new-folder-and-file-with-your-name">3. Create a new folder and file with your name</h3>
+<pre><code class="language-bash">cd svn_example
+mkdir {your_name}
+touch ./{your_name}/{your_name}.txt
+</code></pre>
+<h3 id="4-modify-an-existing-file">4. Modify an existing file</h3>
+<pre><code class="language-bash">echo &quot;{your_name}&quot; &gt;&gt; ./test1_depth1.txt
+</code></pre>
+<h3 id="5-add-your-new-folder-and-file">5. Add your new folder and file</h3>
+<pre><code class="language-bash">svn add {your_name}
+</code></pre>
+<p>🖥️ Example Output:</p>
+<pre><code class="language-bash">A         your_name
+A         your_name/your_name.txt
+</code></pre>
+<h3 id="6-commit-your-changes">6. Commit your changes</h3>
+<pre><code class="language-bash">svn commit -m &quot;test {your_name}&quot;
+</code></pre>
+<p>🖥️ Example Output:</p>
+<pre><code class="language-bash">Adding         your_name
+Adding         your_name/your_name.txt
+Sending        test1_depth1.txt
+Transmitting file data ..done
+Committing transaction...
+Committed revision 220.
 </code></pre>
 <hr>
-<h2 id="install-pytorch-for-specific-cuda-version">Install PyTorch for Specific CUDA Version</h2>
-<p>To install the correct version of PyTorch that matches <strong>CUDA 11.7</strong>, run:</p>
-<pre><code class="language-bash">conda install pytorch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2 pytorch-cuda=11.7 -c pytorch -c nvidia
-</code></pre>
-<p>📚 For other versions and more details, visit the <a href="https://pytorch.org/get-started/previous-versions/">official PyTorch installation guide</a>.</p>
-<hr>
-<p>Thanks for my colleague, Cheng-Tse Lee, provide many supports to setup the environment. This content is also revise by ChatGPT.</p>
+<p>Thanks for my colleague, Tse-Hou Hung, teaching me how to use SVN. This content is also revise by ChatGPT.</p>
 
 </article>
 
@@ -351,8 +431,6 @@ Build cuda_11.7.r11.7/compiler.31294372_0
         <div class="my-4">
     
     <a href="/tags/aiins/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#AIINS</a>
-    
-    <a href="/tags/ubuntu/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#ubuntu</a>
     
     <a href="/tags/tutorial/" class="inline-block bg-tertiary-bg text-sm rounded px-3 py-1 my-1 me-2 hover:text-eureka">#tutorial</a>
     
@@ -371,11 +449,16 @@ Build cuda_11.7.r11.7/compiler.31294372_0
   >
     <div>
       
+        <span class="text-primary-text block font-bold"
+          >Previous</span
+        >
+        <a href="/posts/cuda-and-pytorch/" class="block">Cuda and PyTorch Setup Guide</a>
+      
     </div>
     <div class="mt-4 md:mt-0 md:text-right">
       
         <span class="text-primary-text block font-bold">Next</span>
-        <a href="/posts/svn-usage/" class="block">How to use SVN (Subversion) with command line</a>
+        <a href="/posts/server-admin/" class="block">How to be a Server Administrator</a>
       
     </div>
   </div>
@@ -402,15 +485,27 @@ Build cuda_11.7.r11.7/compiler.31294372_0
 >
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#check-current-cuda-version">Check Current CUDA Version</a></li>
-    <li><a href="#check-installed-cuda-versions">Check Installed CUDA Versions</a></li>
-    <li><a href="#change-cuda-version-in-conda-environment">Change CUDA Version (in Conda Environment)</a>
+    <li><a href="#what-is-svn">What is SVN?</a></li>
+    <li><a href="#tools-for-svn">Tools for SVN</a></li>
+    <li><a href="#git-workflow-for-comparison">Git Workflow (for comparison)</a></li>
+    <li><a href="#svn-commands">SVN Commands</a>
       <ul>
-        <li><a href="#verify-the-change">Verify the Change</a></li>
+        <li><a href="#list-repository-contents">List Repository Contents</a></li>
+        <li><a href="#download">Download</a></li>
+        <li><a href="#add-new-files-or-folders">Add New Files or Folders</a></li>
+        <li><a href="#commit-changes">Commit Changes</a></li>
       </ul>
     </li>
-    <li><a href="#check-cuda-version-in-pytorch">Check CUDA Version in PyTorch</a></li>
-    <li><a href="#install-pytorch-for-specific-cuda-version">Install PyTorch for Specific CUDA Version</a></li>
+    <li><a href="#try-it-yourself-for-aiins-student">Try It Yourself (For AIINS student)</a>
+      <ul>
+        <li><a href="#1-list-the-repository">1. List the repository</a></li>
+        <li><a href="#2-checkout-the-svn_example-directory">2. Checkout the <code>svn_example</code> directory</a></li>
+        <li><a href="#3-create-a-new-folder-and-file-with-your-name">3. Create a new folder and file with your name</a></li>
+        <li><a href="#4-modify-an-existing-file">4. Modify an existing file</a></li>
+        <li><a href="#5-add-your-new-folder-and-file">5. Add your new folder and file</a></li>
+        <li><a href="#6-commit-your-changes">6. Commit your changes</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 </div>
@@ -432,9 +527,6 @@ Build cuda_11.7.r11.7/compiler.31294372_0
         <h3>See Also</h3>
         
           <a href="/posts/server-admin/" class="no-underline">How to be a Server Administrator</a>
-          <br />
-        
-          <a href="/posts/svn-usage/" class="no-underline">How to use SVN (Subversion) with command line</a>
           <br />
         
       </div>

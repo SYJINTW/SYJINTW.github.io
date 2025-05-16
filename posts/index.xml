@@ -20,6 +20,14 @@ nvcc: NVIDIA (R) Cuda compiler driver Copyright (c) 2005-2021 NVIDIA Corporation
 Check Installed CUDA Versions Run the following command to list all installed CUDA directories:</description>
     </item>
     <item>
+      <title>How to use SVN (Subversion) with command line</title>
+      <link>/posts/svn-usage/</link>
+      <pubDate>Sun, 02 Mar 2025 13:11:22 +0800</pubDate>
+      <guid>/posts/svn-usage/</guid>
+      <description>In this document, I will introduce the most useful SVN commands based on my personal experience. If there are any important commands I missed, feel free to contact me — your suggestions might benefit all readers.
+What is SVN? SVN (Apache Subversion) is a centralized version control system that allows multiple users to collaborate on code or documents by keeping track of changes in a central repository. Unlike Git, which is distributed, SVN relies on a single central server to store all versions of files, and developers check out and commit changes directly to this server.</description>
+    </item>
+    <item>
       <title>How to be a Server Administrator</title>
       <link>/posts/server-admin/</link>
       <pubDate>Sat, 01 Mar 2025 05:00:00 +0800</pubDate>
